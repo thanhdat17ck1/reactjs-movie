@@ -1,5 +1,7 @@
 import React, { Component}  from 'react';
 import axios from 'axios';
+import logo from './../assets/img/logo.png';
+
 
 class Header extends Component {
     state = {
@@ -17,33 +19,39 @@ class Header extends Component {
         alert("ok");
     }
     render(){
-        var menus=[
-            {
-                id: 1,
-                name: 'Home',
-            },
-            {
-                id: 2,
-                name: 'Contact',
-            }
-        ];
-        var listMenus = menus.map((menu, index) => {
-            return  <li key={ menu.id }>
-                        <a href="{#}">{ menu.name }</a>
-                    </li>
-            
-        });
         return(
             <div>
-                <ul>
-                    { listMenus }
-                </ul>
-                <button onClick={this.Showok}>
-                    Click me
-                </button>
-                <ul>
-                    { this.state.persons.map(person => <li>{person.name}</li>)}
-                </ul>
+                <nav className="c-header">
+                    <div className="c-header__logo">
+                        <a href="#logo">
+                            <img src={logo} alt="" />
+                        </a>
+                    </div>
+                    <div class="c-header__nav">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Lịch Chiếu Phim
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Cụm Rạp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Tin Tức
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Ứng Dụng
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         )
     }
